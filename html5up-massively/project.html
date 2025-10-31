@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ambili AN — Portfolio</title>
+  <style>
+        :root{
+      --bg: rgb(16, 60, 16); /* green background */
+      --text: #ffffff; /* white text */
+      --nav-height: 64px;
+      --max-width: 980px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Top navigation */
+    .nav {
+      position: sticky;
+      top:0;
+      height: var(--nav-height);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.08); /* subtle overlay */
+      backdrop-filter: blur(4px);
+      z-index:100;
+    }
+
+    .nav-inner {
+      width:100%;
+      max-width: var(--max-width);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 16px;
+      gap:12px;
+    }
+
+    .brand {
+      font-weight:700;
+      letter-spacing:0.4px;
+    }
+
+    .menu {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .menu a{
+      color:var(--text);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:6px;
+      font-weight:600;
+      font-size:0.95rem;
+      transition:background .15s, transform .08s;
+    }
+    .menu a:hover{ background: rgba(255,255,255,0.12); transform:translateY(-2px); }
+
+    /* Page sections */
+    .container{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    section{
+      padding: 48px 0;
+      min-height: calc(100vh - var(--nav-height));
+      box-sizing: border-box;
+    }
+
+    /* Home center */
+    .home-inner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: calc(100vh - var(--nav-height));
+    }
+    #home {
+  background-color: rgb(16, 60, 16);
+  color: white;
+  height: 100vh; /* takes full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-content h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-transform: uppercase; /* block letters */
+}
+
+.home-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.home-content p {
+  font-size: 18px;
+  font-style: italic;
+  width: 70%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+    .card {
+      text-align:center;
+      padding: 36px 24px;
+      max-width: 760px;
+      width:100%;
+    }
+
+    h1{
+      margin:0 0 8px 0;
+      font-size: clamp(28px, 4.2vw, 42px);
+      line-height:1.05;
+    }
+    .subtitle{
+      margin: 0 0 18px 0;
+      font-size: clamp(14px, 2.3vw, 18px);
+      opacity:0.95;
+    }
+    .bio{
+      margin:0 auto;
+      font-size: clamp(13px, 1.8vw, 16px);
+      line-height:1.6;
+      opacity:0.95;
+    }
+
+    /* Simple section visuals */
+    .section-title{
+      font-size:20px;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+    .box{
+      background: rgba(0,0,0,0.08);
+      padding:16px;
+      border-radius:8px;
+    }
+
+    /* Responsive nav -> stack on small screens */
+    @media (max-width:720px){
+      .nav-inner{ flex-direction:column; gap:8px; padding:8px; height:auto; }
+      .menu{ flex-wrap:wrap; justify-content:center; }
+      section{ padding:28px 12px; }
+    }
+
+    /* smooth scrolling */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <div class="brand">Ambili AN</div>
+      <nav class="menu" role="navigation" aria-label="Main menu">
+        <!-- 7 menu items -->
+        <a href="#home">Home</a>
+        <a href="#background">Background</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="home-content">
+      <h1>AMBILI AN</h1>
+      <h2>An Analyst Portfolio</h2>
+      <p><i>A data enthusiast having than 12 years of experience in the IT field with 3 years of analytical experience in Power BI, SQL, Python, and R.</i></p>
+    </div>
+  </section>
+
+  <!-- Background -->
+  <section id="background" class="container" aria-labelledby="bg-title">
+    <h2 id="bg-title" class="section-title">Background</h2>
+    <div class="box">
+      <p>Brief background information can go here. Add education, career highlights, or a short summary about your journey in data and analytics.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container" aria-labelledby="skills-title">
+    <h2 id="skills-title" class="section-title">Skills</h2>
+    <div class="box">
+      <p>Power BI, SQL, Python, R, DAX, ETL, Azure Data Factory, Data Modelling, SSRS, and more.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="container" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-title">Projects</h2>
+    <div class="box">
+      <p>Short project summaries, links to case studies or screenshots can be placed here.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="container" aria-labelledby="portfolio-title">
+    <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+    <div class="box">
+      <p>Embed visuals, Power BI links or images of dashboards and reports here.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Contact</h2>
+    <div class="box">
+      <p>Email: <a href="mailto:youremail@example.com" style="color:var(--text); text-decoration:underline;">youremail@example.com</a></p>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="container" aria-labelledby="resume-title">
+    <h2 id="resume-title" class="section-title">Resume</h2>
+    <div class="box">
+      <p>Link to downloadable CV or short highlights of experience and education.</p>
+    </div>
+  </section>
+
+</body>
+</html>
